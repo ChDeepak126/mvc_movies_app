@@ -9,6 +9,9 @@ const MONGO_URI = process.env.MONGO_URI;
 
 const app = express();
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.status(200).send("MVC Movies API is running!");
+});
 
 //establishing connection with mongodb
 connectDB(MONGO_URI);
